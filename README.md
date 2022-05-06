@@ -26,4 +26,7 @@ $ npm install
 
 #### 新增需要的資料夾：
 
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+$\color{red}{connections}$ - 資料庫連結  
+$\color{#FF3030}{controllers}$ - 控制器  
+$\color{#FF3030}{models}$ - 模型  
+$\color{#FF3030}{servers}$ - 訊息
