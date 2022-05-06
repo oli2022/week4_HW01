@@ -26,7 +26,7 @@ $ npm install
 
 #### 新增需要的資料夾：
 
-$\color{red}{connections}$ - 資料庫連結  
-$\color{#FF3030}{controllers}$ - 控制器  
-$\color{#FF3030}{models}$ - 模型  
-$\color{#FF3030}{servers}$ - 訊息
+`connections` - 資料庫連結  
+**controllers** - 控制器  
+**Models** - 模型  
+**servers** - 訊息
