@@ -92,7 +92,7 @@ const postSchema = new mongoose.Schema(
 );
 ```
 
-**`新增 postContr.json`** -  
+:heavy_plus_sign:**`新增 postContr.json`** -  
 :open_file_folder: controllers 底下  
 新增 postContr.json  
 寫簡單的 get post 測試是否可以執行
@@ -160,7 +160,7 @@ DATABASE_PASSWORD = 這是密碼
 ```
 
 :open_file_folder: connections 底下  
-新增檔案： post.js
+:heavy_plus_sign:新增檔案： post.js
 
 ```js
 const mongoose = require('mongoose');
