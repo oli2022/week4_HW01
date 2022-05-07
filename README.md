@@ -37,7 +37,7 @@ $ npm install
 **`example.env`** - 放連線資料的 key，value 則不放  
 **`.gitignore`** - 不想上傳到 github 的資料夾或檔案可以設定在這裡
 
-exsample.env  
-這個檔案是在交接給別人時要用的  
-原本的 config.env 是自己用的不外露  
-告訴別人原本的 env 檔裡面的結構有什麼?
+> exsample.env  
+> 這個檔案是在交接給別人時要用的  
+> 原本的 config.env 是自己用的不外露  
+> 告訴別人原本的 env 檔裡面的結構有什麼?
