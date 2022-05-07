@@ -46,4 +46,151 @@ $ npm install
 
 ### 第一階段
 
-📣
+📣  
+**`package.json`** -  
+設定 start  
+確定可以 npm run start:dev
+
+```js
+"scripts": {
+        "start": "node ./bin/www",
+        "start:dev": "nodemon ./bin/www"
+    },
+```
+
+:open_file_folder: Models 底下  
+**`新增 postModel.js`** -  
+設定 Schema
+
+```js
+const postSchema = new mongoose.Schema(
+    {
+        content: {
+            type: String,
+            required: [true, 'Content 未填寫'],
+        },
+        image: {
+            type: String,
+            default: '',
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now(),
+            select: false,
+        },
+        name: {
+            type: String,
+            required: [true, '貼文姓名未填寫'],
+        },
+        likes: {
+            type: Number,
+            default: 0,
+        },
+    },
+    {
+        versionKey: false,
+    }
+);
+```
+
+**`新增 postContr.json`** -  
+:open_file_folder: controllers 底下  
+新增 postContr.json  
+寫簡單的 get post 測試是否可以執行
+
+```js
+// 新增、修改、刪除
+const postsController = {
+    getAllPosts: async (req, res) => {
+        const post = await postModel.find();
+        res.status(200).json(post);
+    },
+    createPost: async (req, res) => {
+        const newPost = await postModel.create(req.body);
+        res.status(200).json({
+            post: newPost,
+            status: ' 單筆資料新增成功 ',
+        });
+    },
+};
+```
+
+**`引用設定 app.js`** -  
+app.js -> routes/posts.js(路由) -> controllers/postContr.js(控制) -> Models/postModel.js(Schema)
+
+```js
+const postsRouter = require('./routes/posts');
+app.use('/posts', postsRouter);
+```
+
+連線可以先用本地端做測試 - Postman
+
+```js
+// mongoose.connect('mongodb://localhost:27017/week4HW01').then((res) => {
+//     console.log('連線資料成功');
+// });
+```
+
+用 Postman 測試完後再建立遠端
+
+## 遠端的部份 - heroku 部署
+
+### heroku 指令
+
+```js
+$ git init
+$ git add.
+$ git commit -m 'first commit'
+$ git push heroku master
+```
+
+heroku 預設的分支是 master  
+github 預設的分支是 main - 2021 底改的
+
+### 遠端連線設定
+
+#### 連接 mongoDB
+
+打開檔案：config.env
+裡面的結構：
+
+```js
+PORT = 3000
+DATABASE = 這是 mongoDB 取得的路徑
+DATABASE_PASSWORD = 這是密碼
+```
+
+:open_file_folder: connections 底下  
+新增檔案： post.js
+
+```js
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config({ path: './config.env' }); // 路徑
+
+const DB = process.env.DATABASE.replace('<password>', process.env.DATABASE_PASSWORD);
+mongoose
+    .connect(DB)
+    .then(() => console.log('連線資料成功'))
+    .catch((err) => console.log(err));
+```
+
+#### 在 app.js require 檔案路徑
+
+```js
+// 連線資料庫
+require('./connections/post');
+```
+
+### 在 heroku 裡設定環境變數
+
+-   選擇機台
+    -   ⇒settings ⇒Config Vars - 把 config.env 的資料放進去 -
+        ![imgbox for post_img](https://images2.imgbox.com/8d/89/LISIIeM2_o.png)
+        重啟主機 ⇒ more ⇒restart all...
+        可以到 more ⇒ view logs 看有沒有重啟成功
+        接著輸入 git push 將資料推到 heroku
+
+**測試是否能夠新增、取得資料**  
+如果失敗，看看這個流程有沒有漏掉什麼  
+**app.js -> routes/posts.js(路由) -> controllers/postContr.js(控制) -> Models/postModel.js(Schema)**
