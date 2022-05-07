@@ -43,3 +43,7 @@ $ npm install
 > 告訴別人原本的 env 檔裡面的結構有什麼?
 
 :open_file_folder:
+
+### 第一階段
+
+📣
