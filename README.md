@@ -58,7 +58,7 @@ $ npm install
 ```
 
 :open_file_folder: Models 底下  
-**`新增 postModel.js`** -  
+:heavy_plus_sign:**`新增 postModel.js`** -  
 設定 Schema
 
 ```js
@@ -191,5 +191,5 @@ require('./connections/post');
         接著輸入 git push 將資料推到 heroku
 
 **測試是否能夠新增、取得資料**  
-如果失敗，看看這個流程有沒有漏掉什麼  
+:bangbang:如果失敗，看看這個流程有沒有漏掉什麼  
 **app.js -> routes/posts.js(路由) -> controllers/postContr.js(控制) -> Models/postModel.js(Schema)**
