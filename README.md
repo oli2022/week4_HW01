@@ -186,7 +186,7 @@ require('./connections/post');
 
 -   選擇機台
     -   ⇒settings ⇒Config Vars - 把 config.env 的資料放進去 -
-        ![imgbox for post_img](https://images2.imgbox.com/8d/89/LISIIeM2_o.png)
+        ![imgbox for post_img](https://images2.imgbox.com/48/1a/kxnP4yPw_o.png)
         重啟主機 ⇒ more ⇒restart all...
         可以到 more ⇒ view logs 看有沒有重啟成功
         接著輸入 git push 將資料推到 heroku
