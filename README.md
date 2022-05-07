@@ -44,9 +44,8 @@ $ npm install
 
 :open_file_folder:
 
-### 第一階段
+### 第一階段 📣 📣 📣
 
-📣  
 **`package.json`** -  
 設定 start  
 確定可以 npm run start:dev
