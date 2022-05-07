@@ -41,3 +41,5 @@ $ npm install
 > 這個檔案是在交接給別人時要用的  
 > 原本的 config.env 是自己用的不外露  
 > 告訴別人原本的 env 檔裡面的結構有什麼?
+
+:open_file_folder:
