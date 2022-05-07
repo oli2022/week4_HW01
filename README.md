@@ -42,7 +42,7 @@ $ npm install
 > 原本的 config.env 是自己用的不外露  
 > 告訴別人原本的 env 檔裡面的結構有什麼?
 
-:open_file_folder:
+---
 
 ### 第一階段 📣 📣 📣
 
@@ -193,3 +193,18 @@ require('./connections/post');
 **測試是否能夠新增、取得資料**  
 :bangbang:如果失敗，看看這個流程有沒有漏掉什麼  
 **app.js -> routes/posts.js(路由) -> controllers/postContr.js(控制) -> Models/postModel.js(Schema)**
+
+---
+
+### 第二階段 📣 📣 📣
+
+-   把功能補齊 -
+    -   取得所有資料
+    -   新增資料
+    -   刪除單筆資料 - ID
+    -   刪除全部資料
+    -   更新資料 - ID
+
+*   錯誤訊息補齊
+
+---
