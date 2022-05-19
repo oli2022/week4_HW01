@@ -20,6 +20,13 @@ const postsController = {
             status: ' 單筆資料新增成功 ',
         });
     },
+    deleteOne: async (req, res) => {
+        const newPost = await postModel.create(req.body);
+        res.status(200).json({
+            post: newPost,
+            status: ' 單筆資料刪除成功 ',
+        });
+    },
 };
 
 module.exports = postsController;
